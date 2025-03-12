@@ -31,7 +31,7 @@ const R_reg = () => {
       }
   
       axios
-        .post("http://localhost:5000/auth/rreg", formData, {
+        .post("https://food-bot-backend.onrender.com/auth/rreg", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
