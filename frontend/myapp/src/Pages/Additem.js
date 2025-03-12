@@ -29,7 +29,7 @@ const Additem = () => {
         formData.append(key, data[key]);
       }
   
-      axios.post("http://localhost:5000/auth/additem", formData, {
+      axios.post("https://food-bot-backend.onrender.com/auth/additem", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {
