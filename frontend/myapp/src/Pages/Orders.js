@@ -11,7 +11,7 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/uorder/${userId}`);
+                const response = await axios.get(`https://food-bot-backend.onrender.com/api/uorder/${userId}`);
                 if (!Array.isArray(response.data)) {
                     throw new Error("Invalid response format");
                 }
