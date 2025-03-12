@@ -13,7 +13,7 @@ const Reg = () => {
   let add=()=>{
     if(data._id!==""&&data.name!==""&&data.pwd!=="")
     {
-      axios.post("http://localhost:5000/api/reg",data).then((res)=>{
+      axios.post("https://food-bot-backend.onrender.com/api/reg",data).then((res)=>{
         setMsg(res.data.msg)
         if(res.data.msg==="account created")
         {
