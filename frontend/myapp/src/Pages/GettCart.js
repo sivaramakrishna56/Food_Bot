@@ -20,7 +20,7 @@ const GettCart = () => {
     }
 
     axios
-      .get(`http://localhost:5000/api/gettcart/${obj.state._id}`, {
+      .get(`https://food-bot-backend.onrender.com/api/gettcart/${obj.state._id}`, {
         headers: { Authorization: obj.state.token },
       })
       .then((res) => {
@@ -43,7 +43,7 @@ const GettCart = () => {
 
     const endpoint = action === "increase" ? "inc" : "dec";
     axios
-      .get(`http://localhost:5000/api/${endpoint}/${cid}`, {
+      .get(`https://food-bot-backend.onrender.com/api/${endpoint}/${cid}`, {
         headers: { Authorization: obj.state.token },
       })
       .then(updateCart);
@@ -51,7 +51,7 @@ const GettCart = () => {
 
   const deleteItem = (cid) => {
     axios
-      .delete(`http://localhost:5000/api/del/${cid}`, {
+      .delete(`https://food-bot-backend.onrender.com/api/del/${cid}`, {
         headers: { Authorization: obj.state.token },
       })
       .then(updateCart);
@@ -67,7 +67,7 @@ const GettCart = () => {
             {cart.map((prod) => (
               <div className="cart-row" key={prod._id}>
                 <img
-                  src={`http://localhost:5000/prdimg/${prod.pimg}`}
+                  src={`https://food-bot-backend.onrender.com/prdimg/${prod.pimg}`}
                   alt={prod.name}
                   className="cart-img"
                 />
