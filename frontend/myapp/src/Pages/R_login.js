@@ -18,7 +18,7 @@ const R_login = () => {
 
   let login = () => {
     if (data._id !== "" && data.pwd !== "") { 
-      axios.post("http://localhost:5000/auth/rlogin",data).then((res) => {
+      axios.post("https://food-bot-backend.onrender.com/auth/rlogin",data).then((res) => {
         setMsg(res.data.msg)
         if (res.data.token!==undefined) {
           obj.updstate(res.data)
