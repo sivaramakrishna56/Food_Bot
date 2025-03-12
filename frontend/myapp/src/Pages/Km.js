@@ -22,7 +22,7 @@ const Km = () => {
   let addComment = () => {
     axios
       .put(
-        "http://localhost:5000/api/addcom",
+        "https://food-bot-backend.onrender.com/api/addcom",
         { ...rv, name: obj.state.name, _id: prodobj._id },
         { headers: { Authorization: obj.state.token } }
       )
@@ -32,7 +32,7 @@ const Km = () => {
       });
   };
   let addcart = (prodobj) => {   
-    axios.post("http://localhost:5000/api/addcart",
+    axios.post("https://food-bot-backend.onrender.com/api/addcart",
       {
         uid: obj.state._id,
         pid: prodobj._id,
@@ -74,7 +74,7 @@ const Km = () => {
           {/* Left side - Image */}
           <div className="km-img-container">
             <img
-              src={`http://localhost:5000/prdimg/${prodobj.pimg}`}
+              src={`https://food-bot-backend.onrender.com/prdimg/${prodobj.pimg}`}
               className="km-product-img"
               alt={prodobj.name}
             />
