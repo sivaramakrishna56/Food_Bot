@@ -18,14 +18,14 @@ if (!process.env.STRIPE_SECRET_KEY) {
 }
 
 // ✅ Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/fddb")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://food-bot-frontend-ywvy.onrender.com" }));
 app.put("/auth/updateOrderStatus", async (req, res) => {
   try {
       const { orderId, newStatus } = req.body;
