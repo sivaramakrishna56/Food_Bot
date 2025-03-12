@@ -14,7 +14,7 @@ const Home = () => {
   };
   let obj=useContext(Ct)
   useEffect(()=>{
-    axios.get("http://localhost:5000/api/getrest").then((res)=>{
+    axios.get("https://food-bot-backend.onrender.com/api/getrest").then((res)=>{
       setRest(res.data)
     })
   },[])
@@ -78,7 +78,7 @@ const Home = () => {
         {filteredRestaurants.length > 0 ? (
           filteredRestaurants.map((restaurant) => (
             <div key={restaurant.id} className="restaurant-card">
-              <img src={`http://localhost:5000/resimg/${restaurant.rimg}`}/>
+              <img src={`https://food-bot-backend.onrender.com/resimg/${restaurant.rimg}`}/>
               <h5><b>{restaurant.name}</b></h5>
               <p>Location: {restaurant.location}</p>
             </div>
