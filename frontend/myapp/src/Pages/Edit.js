@@ -23,7 +23,7 @@ const Edit = () => {
 
   let edit = () => {
     axios
-      .put("http://localhost:5000/auth/edit", prod, {
+      .put("https://food-bot-backend.onrender.com/auth/edit", prod, {
         headers: { Authorization: obj.state.token, uid: obj.state._id },
       })
       .then(() => {
@@ -39,7 +39,7 @@ const Edit = () => {
     fd.append("_id", prod._id);
     fd.append("oldimg", prod.pimg);
     axios
-      .put("http://localhost:5000/auth/editimg", fd, {
+      .put("https://food-bot-backend.onrender.com/auth/editimg", fd, {
         headers: { Authorization: obj.state.token, uid: obj.state._id },
       })
       .then(() => {
