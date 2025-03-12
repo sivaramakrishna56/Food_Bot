@@ -1,0 +1,13 @@
+let express = require("express")
+const { login, reg, rupload } = require("../controler/rcont")
+const { upload, addprod, edit, editimg, delprod } = require("../controler/prodcont")
+const { restorders } = require("../controler/paymentController")
+let rrt = new express.Router()
+rrt.post("/rreg",rupload.single("rimg"),reg)
+rrt.post("/rlogin",login)
+rrt.post("/additem",upload.single("pimg"),addprod)
+rrt.put("/edit",edit)
+rrt.put("/editimg",upload.single("pimg"),editimg)
+rrt.delete("/delprod/:pid",delprod)
+rrt.get("/restaurantorders/:restaurantId",restorders)
+module.exports=rrt
