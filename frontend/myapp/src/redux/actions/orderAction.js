@@ -31,7 +31,7 @@ export const placeOrderAction = (orderData) => async (dispatch) => {
 
         dispatch({ type: "PLACE_ORDER_REQUEST" });
 
-        const { data } = await axios.post("http://localhost:5000/api/orders/place-order", orderData);
+        const { data } = await axios.post("https://food-bot-backend.onrender.com/api/orders/place-order", orderData);
 
         dispatch({ type: "PLACE_ORDER_SUCCESS", payload: data });
     } catch (error) {
