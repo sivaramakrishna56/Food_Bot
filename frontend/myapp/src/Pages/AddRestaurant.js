@@ -18,7 +18,7 @@ const AddRestaurant = () => {
 
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/getprod");
+        const res = await axios.get("https://food-bot-backend.onrender.com/api/getprod");
         setProducts(res.data);
       } catch (err) {
         console.error("Error fetching products:", err);
@@ -37,7 +37,7 @@ const AddRestaurant = () => {
   }
   let del=(pid)=>{
     console.log(pid)
-    axios.delete(`http://localhost:5000/auth/delprod/${pid}`,{"headers":{"Authorization":obj.state.token,"uid":obj.state._id}}).then((res)=>{
+    axios.delete(`https://food-bot-backend.onrender.com/auth/delprod/${pid}`,{"headers":{"Authorization":obj.state.token,"uid":obj.state._id}}).then((res)=>{
       console.log(res.data)
       setF(!f)
     })
@@ -71,7 +71,7 @@ const AddRestaurant = () => {
             filteredProducts.map((product) => (
               <div key={product._id} className="restaurant-card">
                 <img
-                  src={`http://localhost:5000/prdimg/${product.pimg}`}
+                  src={`https://food-bot-backend.onrender.com/prdimg/${product.pimg}`}
                   alt={product.name}
                 />
                 <h5><b>Product:</b> {product.name}</h5>
